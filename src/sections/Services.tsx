@@ -1,6 +1,7 @@
 "use client";
 
 import { Clock } from "lucide-react";
+import Reveal from "@/components/ui/Reveal";
 
 const services = [
   {
@@ -37,7 +38,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-20 bg-[#0b0b0b] text-white overflow-hidden sm:px-20 px-5">
+    <Reveal as="section" id="services" className="py-20 bg-[#0b0b0b] text-white overflow-hidden sm:px-20 px-5">
       {/* Header */}
       <div className="max-w-7xl mx-auto text-center mb-14 sm:px-5 px-3">
         <h2 className="text-4xl md:text-4xl font-bold text-white mb-4 tracking-wide">
@@ -89,6 +90,6 @@ export default function ServicesSection() {
           </div>
         ))}
       </div>
-    </section>
+    </Reveal>
   );
 }

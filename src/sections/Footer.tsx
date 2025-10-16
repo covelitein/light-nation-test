@@ -1,8 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import Reveal from "@/components/ui/Reveal";
 
 const Footer = () => {
   return (
-    <footer className="text-white">
+    <Reveal as="footer" className="text-white">
       {/* Subscribe Section */}
       <div className="py-6 px-4">
         <div className="max-w-6xl mx-auto text-center">
@@ -222,7 +225,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </Reveal>
   );
 };
 

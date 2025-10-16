@@ -1,9 +1,13 @@
+"use client";
 import { ArrowRight } from "lucide-react";
+
 import React from "react";
+import Reveal from "@/components/ui/Reveal";
 
 export default function Cta() {
   return (
-    <section
+    <Reveal
+      as="section"
       id="cta"
       className='relative min-h-[90vh] bg-[linear-gradient(to_bottom,rgba(0,0,0,0.85),rgba(0,0,0,0.7)),url("/subBan.jpg")] bg-cover bg-center bg-no-repeat flex items-center justify-center text-white text-center px-4 sm:px-8 md:px-16 lg:px-24 py-16 md:py-24 mt-8'
     >
@@ -29,6 +33,6 @@ export default function Cta() {
           </a>
         </div>
       </div>
-    </section>
+    </Reveal>
   );
 }

@@ -2,11 +2,12 @@
 
 import { programs } from "@/constants";
 import CustomSwiper from "./CustomSwiper";
+import Reveal from "@/components/ui/Reveal";
 import { Calendar, MapPin } from "lucide-react";
 
 export default function UpcomingPrograms() {
   return (
-    <div id="programs" className="max-w-[90%] mx-auto overflow-hidden pb-20 -mt-60">
+    <Reveal as="div" id="programs" className="max-w-[90%] mx-auto overflow-hidden pb-20 -mt-60">
       <CustomSwiper slidesPerView={3.2} spaceBetween={24}>
         {programs.map((program) => (
           <div
@@ -50,6 +51,6 @@ export default function UpcomingPrograms() {
           </div>
         ))}
       </CustomSwiper>
-    </div>
+    </Reveal>
   );
 }

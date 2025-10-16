@@ -2,10 +2,11 @@
 
 import { ArrowRight } from "lucide-react";
 import React from "react";
+import Reveal from "@/components/ui/Reveal";
 
 export default function LeadPastor() {
   return (
-    <section id="leadpastor" className="bg-[#0b0b0b] text-white py-14 sm:py-16 md:py-20 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32">
+    <Reveal as="section" id="leadpastor" className="bg-[#0b0b0b] text-white py-14 sm:py-16 md:py-20 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
         {/* Image Section */}
         <div className="flex justify-center">
@@ -39,6 +40,6 @@ export default function LeadPastor() {
           </div>
         </div>
       </div>
-    </section>
+    </Reveal>
   );
 }

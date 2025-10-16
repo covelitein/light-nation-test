@@ -1,6 +1,7 @@
 "use client";
 
 import { MapPin, ArrowRight } from "lucide-react";
+import Reveal from "@/components/ui/Reveal";
 
 const branches = [
   {
@@ -49,7 +50,11 @@ const branches = [
 
 export default function BranchesSection() {
   return (
-    <section id="branches" className="py-20 px-5 md:px-20 bg-[#0b0b0b] text-white">
+    <Reveal
+      as="section"
+      id="branches"
+      className="py-20 px-5 md:px-20 bg-[#0b0b0b] text-white"
+    >
       {/* Section Header */}
       <div className="max-w-7xl mx-auto text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-semibold mb-3">
@@ -92,11 +97,14 @@ export default function BranchesSection() {
 
       {/* View More Button */}
       <div className="mt-12 flex justify-center">
-        <a href="/#branches" className="flex items-center gap-2 px-6 py-3 rounded-full bg-red-500 text-white text-sm font-medium hover:bg-red-600 transition group">
+        <a
+          href="/branches"
+          className="flex items-center gap-2 px-6 py-3 rounded-full bg-red-500 text-white text-sm font-medium hover:bg-red-600 transition group"
+        >
           View More Branches
           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
         </a>
       </div>
-    </section>
+    </Reveal>
   );
 }

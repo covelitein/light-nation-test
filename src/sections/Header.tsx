@@ -9,12 +9,14 @@ import {
 import { Mail, PhoneForwarded, Menu, X } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
+import Reveal from "@/components/ui/Reveal";
 
 export default function Header() {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
-    <header className="w-full">
+    <Reveal as="header" className="w-full">
+      {/* Reveal wrapper around header */}
       {/* mobile */}
       <div className="sm:hidden bg-black/40 flex justify-between text-white p-5 flex items-center gap-3 sm:gap-6">
         <div className="flex items-center gap-1 sm:gap-2">
@@ -96,16 +98,16 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <Link href="/login">
+          <Link href="/auth">
             <Button
               variant="outline"
-              className="px-6 py-2 h-auto text-sm font-medium"
+              className="px-6 py-2 h-auto text-sm font-medium border border-red-500 hover:border-red-600 bg-transparent hover:bg-transparent text-red-500 cursor-pointer hover:text-red-600"
             >
               Login
             </Button>
           </Link>
-          <Link href="/register">
-            <Button className="px-6 py-2 h-auto text-sm font-medium rounded-sm">
+          <Link href="/auth">
+            <Button className="px-6 py-2 h-auto text-sm font-medium rounded-sm bg-red-500 hover:bg-red-600 text-white cursor-pointer">
               Register
             </Button>
           </Link>
@@ -194,16 +196,16 @@ export default function Header() {
 
               {/* Mobile Buttons */}
               <div className="flex flex-col gap-3 pt-4 border-t border-white/10 px-5">
-                <Link href="/login" onClick={() => setDrawerOpen(false)}>
+                <Link href="/auth" onClick={() => setDrawerOpen(false)}>
                   <Button
                     variant="outline"
-                    className="w-full px-6 py-3 h-auto text-base font-medium"
+                    className="w-full px-6 py-3 h-auto text-base font-medium border border-red-500 hover:border-red-600 bg-transparent hover:bg-transparent text-red-500 hover:text-red-600 cursor-pointer"
                   >
                     Login
                   </Button>
                 </Link>
-                <Link href="/register" onClick={() => setDrawerOpen(false)}>
-                  <Button className="w-full px-6 py-3 h-auto text-base font-medium rounded-sm">
+                <Link href="/auth" onClick={() => setDrawerOpen(false)}>
+                  <Button className="w-full px-6 py-3 h-auto text-base font-medium rounded-sm bg-red-500 hover:bg-red-600 text-white cursor-pointer">
                     Register
                   </Button>
                 </Link>
@@ -212,6 +214,6 @@ export default function Header() {
           </div>
         </DrawerContent>
       </Drawer>
-    </header>
+    </Reveal>
   );
 }
