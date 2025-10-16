@@ -3,8 +3,10 @@
 import { ArrowRight } from "lucide-react";
 import React from "react";
 import Reveal from "@/components/ui/Reveal";
+import { usePathname } from "next/navigation";
 
 export default function LeadPastor() {
+  const pathname = usePathname() || "/";
   return (
     <Reveal as="section" id="leadpastor" className="bg-[#0b0b0b] text-white py-14 sm:py-16 md:py-20 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
@@ -33,10 +35,12 @@ export default function LeadPastor() {
           </p>
 
           <div className="pt-6">
+            { !pathname.startsWith("/branches") && (
             <a href="/#branches" className="flex items-center gap-2 mx-auto md:mx-0 px-6 py-3 rounded-full bg-red-500 text-white text-sm sm:text-base font-medium hover:bg-red-600 transition-all group shadow-md w-auto">
               View More Branches
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" />
             </a>
+            )}
           </div>
         </div>
       </div>
