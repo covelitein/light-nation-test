@@ -47,9 +47,9 @@ export default function Preloader() {
           alt="light nation"
           className="h-20 object-contain animate-pulse"
         />
-        {/* <div className="text-white font-semibold text-lg tracking-tight">
-          Igniting the adventure...
-        </div> */}
+        <div className="text-white font-semibold text-lg tracking-tight">
+          loading...
+        </div>
       </div>
     </div>
   );

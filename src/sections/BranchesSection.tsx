@@ -2,6 +2,7 @@
 
 import { MapPin, ArrowRight } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
+import { usePathname } from "next/navigation";
 
 const branches = [
   {
@@ -49,6 +50,7 @@ const branches = [
 ];
 
 export default function BranchesSection() {
+  const pathname = usePathname() || "/";
   return (
     <Reveal
       as="section"
@@ -97,13 +99,15 @@ export default function BranchesSection() {
 
       {/* View More Button */}
       <div className="mt-12 flex justify-center">
-        <a
-          href="/branches"
-          className="flex items-center gap-2 px-6 py-3 rounded-full bg-red-500 text-white text-sm font-medium hover:bg-red-600 transition group"
-        >
-          View More Branches
-          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-        </a>
+        {pathname !== "/branches" && (
+          <a
+            href="/branches"
+            className="flex items-center gap-2 px-6 py-3 rounded-full bg-red-500 text-white text-sm font-medium hover:bg-red-600 transition group"
+          >
+            View More Branches
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          </a>
+        )}
       </div>
     </Reveal>
   );
