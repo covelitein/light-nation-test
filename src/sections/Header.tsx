@@ -48,7 +48,7 @@ export default function Header() {
   }
 
   return (
-  <Reveal as="header" className="w-full" triggerOnLoad>
+  <header className="w-full">
       {/* Reveal wrapper around header */}
       {/* mobile */}
       <div className="sm:hidden bg-black/40 flex justify-between text-white p-5 flex items-center gap-3 sm:gap-6">
@@ -265,6 +265,6 @@ export default function Header() {
           </div>
         </DrawerContent>
       </Drawer>
-    </Reveal>
+    </header>
   );
 }
