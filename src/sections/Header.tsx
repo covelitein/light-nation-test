@@ -10,7 +10,6 @@ import { Mail, PhoneForwarded, Menu, X } from "lucide-react";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import Reveal from "@/components/ui/Reveal";
 
 export default function Header() {
   const [drawerOpen, setDrawerOpen] = useState(false);
