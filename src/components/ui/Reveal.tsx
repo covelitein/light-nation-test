@@ -9,6 +9,10 @@ type Props<T extends React.ElementType> = {
   className?: string;
   delay?: number;
   distance?: number; // px to start from (negative moves up)
+  /**
+   * If true, trigger animation once on mount (page load) instead of on scroll
+   */
+  triggerOnLoad?: boolean;
 } & Omit<React.ComponentPropsWithoutRef<T>, "children" | "className"> &
   MotionProps;
 
@@ -22,20 +26,27 @@ export default function Reveal<T extends React.ElementType = "div">({
   className,
   delay = 0,
   distance = 30,
+  triggerOnLoad = false,
   ...rest
 }: Props<T>) {
   const Component = (as || "div") as any;
   const MotionComp = motion(Component);
 
+  const motionProps: MotionProps = triggerOnLoad
+    ? {
+        initial: { opacity: 0, y: -distance },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: 0.7, ease: "easeOut", delay },
+      }
+    : {
+        initial: { opacity: 0, y: -distance },
+        whileInView: { opacity: 1, y: 0 },
+        viewport: { once: true, amount: 0.15 },
+        transition: { duration: 0.7, ease: "easeOut", delay },
+      };
+
   return (
-    <MotionComp
-      initial={{ opacity: 0, y: -distance }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: 0.7, ease: "easeOut", delay }}
-      className={className}
-      {...(rest as MotionProps)}
-    >
+    <MotionComp className={className} {...motionProps} {...(rest as MotionProps)}>
       {children}
     </MotionComp>
   );
