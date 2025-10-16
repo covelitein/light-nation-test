@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Outfit, Nunito_Sans } from "next/font/google";
 import "./globals.css";
+import PreloaderClient from "../components/PreloaderClient";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+})
+const nunitoSans = Nunito_Sans({
+  variable: "--font-outfit",
   subsets: ["latin"],
-});
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,7 +24,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`bg-[#0b0b0b] ${outfit.variable} ${nunitoSans.variable}`}>
+        <PreloaderClient />
         {children}
       </body>
     </html>
