@@ -1,7 +1,6 @@
 "use client";
 
 import { Clock } from "lucide-react";
-import Reveal from "@/components/ui/Reveal";
 
 const services = [
   {
@@ -38,7 +37,10 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <Reveal as="section" id="services" className="py-20 bg-[#0b0b0b] text-white overflow-hidden sm:px-20 px-5">
+    <section
+      id="services"
+      className="py-20 bg-[#0b0b0b] text-white overflow-hidden sm:px-20 px-5"
+    >
       {/* Header */}
       <div className="max-w-7xl mx-auto text-center mb-14 sm:px-5 px-3">
         <h2 className="text-4xl md:text-4xl font-bold text-white mb-4 tracking-wide">
@@ -54,6 +56,7 @@ export default function ServicesSection() {
       <div className="max-w-7xl mx-auto sm:px-5 px-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {services.map((service) => (
           <div
+            data-aos="fade-zoom-in"
             key={service.id}
             className="group bg-[#111] rounded-3xl overflow-hidden shadow-md hover:shadow-red-600/30 transition-all duration-700 flex flex-col hover:-translate-y-2 hover:scale-[1.02]"
           >
@@ -90,6 +93,6 @@ export default function ServicesSection() {
           </div>
         ))}
       </div>
-    </Reveal>
+    </section>
   );
 }

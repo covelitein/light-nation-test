@@ -1,7 +1,6 @@
 "use client";
 
 import { MapPin, ArrowRight } from "lucide-react";
-import Reveal from "@/components/ui/Reveal";
 import { usePathname } from "next/navigation";
 
 const branches = [
@@ -52,8 +51,7 @@ const branches = [
 export default function BranchesSection() {
   const pathname = usePathname() || "/";
   return (
-    <Reveal
-      as="section"
+    <section
       id="branches"
       className="py-20 px-5 md:px-20 bg-[#0b0b0b] text-white"
     >
@@ -72,6 +70,7 @@ export default function BranchesSection() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {branches.map((branch) => (
           <div
+            data-aos="fade-up"
             key={branch.id}
             className="group relative h-72 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-700 cursor-pointer"
             style={{
@@ -109,6 +108,6 @@ export default function BranchesSection() {
           </a>
         )}
       </div>
-    </Reveal>
+    </section>
   );
 }

@@ -14,7 +14,8 @@ import { usePathname } from "next/navigation";
 export default function Header() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const pathname = usePathname() || "/";
-  const [hash, setHash] = useState<string>(""
+  const [hash, setHash] = useState<string>(
+    ""
     // initialize on client
   );
 
@@ -47,7 +48,7 @@ export default function Header() {
   }
 
   return (
-  <header className="w-full">
+    <header className="w-full">
       {/* Reveal wrapper around header */}
       {/* mobile */}
       <div className="sm:hidden bg-black/40 flex justify-between text-white p-5 flex items-center gap-3 sm:gap-6">
@@ -99,7 +100,11 @@ export default function Header() {
             <li>
               <Link
                 href="/#home"
-                className={`transition ${isActiveLink("/#home") ? "text-red-400 font-semibold" : "hover:text-red-500 text-white"}`}
+                className={`transition ${
+                  isActiveLink("/#home")
+                    ? "text-red-400 font-semibold"
+                    : "hover:text-red-500 text-white"
+                }`}
               >
                 Home
               </Link>
@@ -107,7 +112,11 @@ export default function Header() {
             <li>
               <Link
                 href="/#about"
-                className={`transition ${isActiveLink("/#about") ? "text-red-400 font-semibold" : "hover:text-red-500 text-white"}`}
+                className={`transition ${
+                  isActiveLink("/#about")
+                    ? "text-red-400 font-semibold"
+                    : "hover:text-red-500 text-white"
+                }`}
               >
                 About Us
               </Link>
@@ -115,7 +124,11 @@ export default function Header() {
             <li>
               <Link
                 href="/#programs"
-                className={`transition ${isActiveLink("/#programs") ? "text-red-400 font-semibold" : "hover:text-red-500 text-white"}`}
+                className={`transition ${
+                  isActiveLink("/#programs")
+                    ? "text-red-400 font-semibold"
+                    : "hover:text-red-500 text-white"
+                }`}
               >
                 Programs
               </Link>
@@ -123,7 +136,11 @@ export default function Header() {
             <li>
               <Link
                 href="/#branches"
-                className={`transition ${isActiveLink("/#branches") ? "text-red-400 font-semibold" : "hover:text-red-500 text-white"}`}
+                className={`transition ${
+                  isActiveLink("/#branches")
+                    ? "text-red-400 font-semibold"
+                    : "hover:text-red-500 text-white"
+                }`}
               >
                 Branches
               </Link>
@@ -131,7 +148,11 @@ export default function Header() {
             <li>
               <Link
                 href="/#services"
-                className={`transition ${isActiveLink("/#services") ? "text-red-400 font-semibold" : "hover:text-red-500 text-white"}`}
+                className={`transition ${
+                  isActiveLink("/#services")
+                    ? "text-red-400 font-semibold"
+                    : "hover:text-red-500 text-white"
+                }`}
               >
                 Services
               </Link>
@@ -139,7 +160,11 @@ export default function Header() {
             <li>
               <Link
                 href="/offering"
-                className={`transition ${isActiveLink("/offering") ? "text-red-400 font-semibold" : "hover:text-red-500 text-white"}`}
+                className={`transition ${
+                  isActiveLink("/offering")
+                    ? "text-red-400 font-semibold"
+                    : "hover:text-red-500 text-white"
+                }`}
               >
                 Offerings
               </Link>
@@ -191,7 +216,11 @@ export default function Header() {
                     <Link
                       href="/#home"
                       onClick={() => setDrawerOpen(false)}
-                      className={`block cursor-pointer transition text-base font-medium rounded-lg px-2 py-1 ${isActiveLink("/#home") ? "text-red-400 bg-white/5" : "text-white hover:text-red-500 hover:bg-white/5"}`}
+                      className={`block cursor-pointer transition text-base font-medium rounded-lg px-2 py-1 ${
+                        isActiveLink("/#home")
+                          ? "text-red-400 bg-white/5"
+                          : "text-white hover:text-red-500 hover:bg-white/5"
+                      }`}
                     >
                       Home
                     </Link>
@@ -200,7 +229,11 @@ export default function Header() {
                     <Link
                       href="/#about"
                       onClick={() => setDrawerOpen(false)}
-                      className={`block cursor-pointer transition text-base font-medium rounded-lg px-2 py-1 ${isActiveLink("/#about") ? "text-red-400 bg-white/5" : "text-white hover:text-red-500 hover:bg-white/5"}`}
+                      className={`block cursor-pointer transition text-base font-medium rounded-lg px-2 py-1 ${
+                        isActiveLink("/#about")
+                          ? "text-red-400 bg-white/5"
+                          : "text-white hover:text-red-500 hover:bg-white/5"
+                      }`}
                     >
                       About Us
                     </Link>
@@ -209,7 +242,11 @@ export default function Header() {
                     <Link
                       href="/#programs"
                       onClick={() => setDrawerOpen(false)}
-                      className={`block cursor-pointer transition text-base font-medium rounded-lg px-2 py-1 ${isActiveLink("/#programs") ? "text-red-400 bg-white/5" : "text-white hover:text-red-500 hover:bg-white/5"}`}
+                      className={`block cursor-pointer transition text-base font-medium rounded-lg px-2 py-1 ${
+                        isActiveLink("/#programs")
+                          ? "text-red-400 bg-white/5"
+                          : "text-white hover:text-red-500 hover:bg-white/5"
+                      }`}
                     >
                       Programs
                     </Link>
@@ -218,7 +255,11 @@ export default function Header() {
                     <Link
                       href="/#branches"
                       onClick={() => setDrawerOpen(false)}
-                      className={`block cursor-pointer transition text-base font-medium rounded-lg px-2 py-1 ${isActiveLink("/#branches") ? "text-red-400 bg-white/5" : "text-white hover:text-red-500 hover:bg-white/5"}`}
+                      className={`block cursor-pointer transition text-base font-medium rounded-lg px-2 py-1 ${
+                        isActiveLink("/#branches")
+                          ? "text-red-400 bg-white/5"
+                          : "text-white hover:text-red-500 hover:bg-white/5"
+                      }`}
                     >
                       Branches
                     </Link>
@@ -227,7 +268,11 @@ export default function Header() {
                     <Link
                       href="/#services"
                       onClick={() => setDrawerOpen(false)}
-                      className={`block cursor-pointer transition text-base font-medium rounded-lg px-2 py-1 ${isActiveLink("/#services") ? "text-red-400 bg-white/5" : "text-white hover:text-red-500 hover:bg-white/5"}`}
+                      className={`block cursor-pointer transition text-base font-medium rounded-lg px-2 py-1 ${
+                        isActiveLink("/#services")
+                          ? "text-red-400 bg-white/5"
+                          : "text-white hover:text-red-500 hover:bg-white/5"
+                      }`}
                     >
                       Services
                     </Link>
@@ -236,7 +281,11 @@ export default function Header() {
                     <Link
                       href="/offering"
                       onClick={() => setDrawerOpen(false)}
-                      className={`block cursor-pointer transition text-base font-medium rounded-lg px-2 py-1 ${isActiveLink("/offering") ? "text-red-400 bg-white/5" : "text-white hover:text-red-500 hover:bg-white/5"}`}
+                      className={`block cursor-pointer transition text-base font-medium rounded-lg px-2 py-1 ${
+                        isActiveLink("/offering")
+                          ? "text-red-400 bg-white/5"
+                          : "text-white hover:text-red-500 hover:bg-white/5"
+                      }`}
                     >
                       Offerings
                     </Link>

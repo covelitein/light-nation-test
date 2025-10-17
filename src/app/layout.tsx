@@ -2,15 +2,16 @@ import type { Metadata } from "next";
 import { Outfit, Nunito_Sans } from "next/font/google";
 import "./globals.css";
 import PreloaderClient from "../components/PreloaderClient";
+import AOSLoader from "@/components/AOSLoader";
 
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
-})
+});
 const nunitoSans = Nunito_Sans({
-  variable: "--font-outfit",
+  variable: "--font-nunito",
   subsets: ["latin"],
-})
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,13 +20,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className={`bg-[#0b0b0b] ${outfit.variable} ${nunitoSans.variable}`}>
+      <body
+        className={`bg-[#0b0b0b] ${outfit.variable} ${nunitoSans.variable}`}
+      >
         <PreloaderClient />
+        <AOSLoader />
         {children}
       </body>
     </html>

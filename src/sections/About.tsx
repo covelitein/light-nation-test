@@ -1,11 +1,10 @@
 "use client";
 
 import React from "react";
-import Reveal from "@/components/ui/Reveal";
 
 export default function About() {
   return (
-    <Reveal as="section" id="about" className="mt-5 lg:px-24 sm:px-16 px-4 pb-10">
+    <section id="about" className="mt-5 lg:px-24 sm:px-16 px-4 pb-10">
       <div
         className="min-h-[90vh] bg-[linear-gradient(to_bottom,rgba(0,0,0,0.9),rgba(0,0,0,0.5)),url('/about-ln.jpg')] bg-no-repeat flex items-center sm:justify-end justify-center sm:pr-10 py-20 bg-cover bg-center"
         style={{ backgroundPosition: "55% 40%" }}
@@ -54,6 +53,6 @@ export default function About() {
           </p>
         </div>
       </div>
-    </Reveal>
+    </section>
   );
 }
